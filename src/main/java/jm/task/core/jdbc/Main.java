@@ -2,9 +2,12 @@ package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.service.UserServiceImpl;
 
+import java.util.logging.Level;
+
 
 public class Main {
     public static void main(String[] args) {
+        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.SEVERE);
         UserServiceImpl uService = new UserServiceImpl();
         uService.createUsersTable();
         uService.saveUser("Ivan", "Gamaz", (byte) 11);
